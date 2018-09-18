@@ -24,7 +24,8 @@
       "yarn format:base --parser typescript --write \"**/*.{ts,tsx}\" \"!{dist,coverage}/**/*\"",
     "format:js":
       "yarn format:base --write \"**/*.{js,jsx,json,gql,graphql}\" \"!{dist,coverage}/**/*\"",
-    "format:css": "stylelint '**/*.css'"
+    "format:css": "stylelint '**/*.css'",
+    "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "lint-staged": {
     "*.{js,jsx,json,gql,graphql}": [
@@ -39,6 +40,7 @@
     "*.css": ["stylelint '**/*.css' --fix"]
   },
   "dependencies": {
+    "@babel/core": "^7.1.0",
     "apollo-cache-inmemory": "^1.1.12",
     "apollo-fetch": "^0.7.0",
     "apollo-link-http": "^1.5.3",
@@ -58,13 +60,19 @@
     "stylelint-config-standard": "^18.2.0"
   },
   "devDependencies": {
+    "@storybook/addon-info": "^3.4.11",
+    "@storybook/react": "^4.0.0-alpha.21",
     "@types/jest": "^22.1.3",
     "@types/next": "^2.4.7",
+    "@types/node": "^10.10.1",
     "@types/ramda": "^0.25.18",
     "@types/react": "^16.0.36",
     "@types/recompose": "^0.24.5",
+    "@types/storybook__react": "^3.0.9",
     "@types/styled-jsx": "^2.2.2",
     "@zeit/next-typescript": "^0.0.10",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.2",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.1",
@@ -75,6 +83,7 @@
     "lint-staged": "^7.0.0",
     "nodemon": "^1.17.2",
     "prettier": "^1.10.2",
+    "react-docgen-typescript-webpack-plugin": "^1.1.0",
     "styled-jsx-css-loader": "^0.3.0",
     "ts-jest": "^22.4.0",
     "ts-node": "^5.0.1",
